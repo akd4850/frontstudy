@@ -1,0 +1,58 @@
+button {
+    background-color: transparent;
+    border: none;
+}
+
+header {
+    display: flex;
+}
+
+#logo {
+    height: 64px;
+    cursor: pointer;
+}
+
+#little-search {
+    display: flex;
+    padding: 0 8px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #DDDDDD;
+    border-radius: 40px;
+    min-width: 330px;
+    height: 48px;
+    box-sizing: border-box;
+    width: 300px;
+}
+
+.little-search_button {
+    display: block;
+    padding: 0 16px;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 600;
+    
+}
+
+.divider {
+    display: block;
+    flex-basis: 1px;
+    flex-shrink: 0;
+    background-color: #DDDDDD;
+    height: 24px;
+}
+
+#magnifying-glass-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF385C;
+    flex-basis: 32px;
+    height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+#Magnifying-glass-icon {
+    width: 12px;
+}

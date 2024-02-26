@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--select name="month">
+        <script>
+            //for(var i = 1; i <= 10; i++) document.write('<img src="../assets/image/animal' + i + '.jpg" style="width:100px;height:100px;">');
+            for(var i = 1; i <= 12; i++) document.write('<option value="' + i + '">' + i + '월</option>');
+        </script>
+    </select-->
+    <script>
+        /*var array = [10, 'test', true];
+
+        for(var i in array) {
+            console.log(array[i]);
+        }
+
+        var items = [];
+
+        items.push('A');
+        items.unshift('C');
+        items.pop();
+        items.shift();
+        items.splice(1, 1, 'Z');*/
+
+        var me = {
+            name: '고길동',
+            age: 30,
+            isAlive: true,
+            hobbys: ['trip', 'exercise'],
+            home: {
+                address: 'Seoul',
+                tel: '02-2323-2322'
+            }
+        };
+
+        var msg1 = '<div>';
+        msg1 += '<div>이름: ' + me.name + '</div>';
+
+        var msg = '';
+        for(var p in me) {
+            msg += '<div>' + p + ': ' + me[p] + '</div>';
+        }
+        document.write(msg);
+
+        var car = {};
+        car.maker = 'test';
+        car.maker = 'modify-test';
+        delete car.maker;
+    </script>
+</body>
+</html>

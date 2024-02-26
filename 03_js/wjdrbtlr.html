@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=========, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <input type="text">
+        <button type="button" onclick="javascript:myFunc()">검사</button>
+        <!--div><a href="javascript:myFunc()">클릭</a></div-->
+    </div>
+    <script>
+        /*var regExpr = /b.at/;
+        if( regExpr.test( document.querySelector('#div1 > input').value ) ) {
+            alert('Pattern sync');
+        } else {
+            alert('pattern unsync');
+        }*/
+
+        function myFunc() {
+            var reg = /b.at/;
+            if( reg.test( document.querySelector('#div1 > input').value ) ) {
+                alert('Pattern sync');
+            } else {
+                alert('pattern unsync');
+            }
+        }
+    </script>
+
+    <div id="div2">
+        <input type="text">
+        <button type="button" onclick="myFunc2()">TEST</button>
+    </div>
+    <script>
+        function myFunc2() {
+            var reg2 = /^[A-Za-z]+$/;
+            if( reg2.test( document.querySelector('#div2 > input').value ) ) {
+                alert('Pattern sync');
+            } else {
+                alert('pattern unsync');
+            }
+        }
+    </script>
+
+    <div>
+        <form action="somewhere" method="post" id="frm-join">
+            <div>
+                <label for="아이디">아이디</label>
+                <input type="text" id="user_id">
+            </div>
+            <div>
+                <label for="비번">비번</label>
+                <input type="password" id="user_password">
+            </div>
+            <div>
+                <label for="비번">비번확인</label>
+                <input type="password" id="confirm_password">
+            </div>
+            <div>
+                <button type="submit" id="btnJoin">가입</button>
+                <button type="reset" id="btnReset">리셋</button>
+            </div>
+        </form>
+    </div>
+    <script>
+    /*    document.querySelectorAll('#div4 a').forEach(function(aTag){
+     aTag.onclick = function(evt) {
+       if(evt.target.getAttribute('href').startsWith('javascript')){
+         evt.preventDefault();
+        }
+      }
+    })*/
+    document.getElementById('btnJoin').onclick = checkReg();
+    document.getElementById('btnReset').onclick = () => {
+        document.getElementById('user_id').value = '';
+        document.getElementById('user_password').value = '';
+        document.getElementById('confirm_password').value = '';
+    };
+
+    function checkReg() {
+        var reg = /[A-Za-z|0-9]/;
+        if( reg.test( document.getElementById('user_id').value ) == false ) {
+            var form = document.getElementById('frm-join');
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+            });
+        }
+        //document.getElementById('user_password');
+        //document.getElementById('confirm_password');
+    }
+    </script>
+</body>
+</html>

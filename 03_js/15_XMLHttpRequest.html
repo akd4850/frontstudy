@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <button type="button" id="btn1">Request1</button>
+        <div id="contents1"></div>
+    </div>
+    <script>
+        function ex01() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://jsonplaceholder.typicode.com/photos/1', true);
+            //xhr.setRequestHeader();
+            xhr.send();
+
+            xhr.addEventListener('readystatechange', function() {
+                if(xhr.readyState !== XMLHttpRequest.DONE)
+                    return;
+
+                if(xhr.status !== 200) {
+                    console.log('Request message', xhr.statusText);
+                    return;
+                }
+
+                var resData = JSON.parse(xhr.responseText);
+                var result = '<div class="album">';
+                result += '<div>Album ID:' + resData.albumId + '</div>';
+                result += '<div>ID:' + resData.id + '</div>';
+                result += '<div>Title:' + resData.title + '</div>';
+                result += '<div><a href=">' + resData.url + '" target="_blank">Album Image</a></div>';
+                result += '<div><img src="' + resData.thumbnailUrl + '"></div>';
+                result += '</div>';
+
+                document.getElementById('contents1').innerHTML = result;
+            });
+        }
+
+        document.getElementById('btn1').addEventListener('click', ex01);
+    </script>
+
+    <div id="div2">
+        <div>
+            <input type="text" id="begin" placeholder="시작NO">
+            <input type="text" id="end" placeholder="종료NO">
+            <button type="button" id="btn2">요청2</button>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <td>앨범썸네일</td>
+                        <td>앨범아이디</td>
+                        <td>아이디</td>
+                        <td>앨범제목</td>
+                    </tr>
+                </thead>
+                <tbody id="contents2">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('btn2').addEventListener('click', () => {
+            var xhr2 = new XMLHttpRequest();
+            xhr2.open('GET', 'https://jsonplaceholder.typicode.com/photos/', true);
+            xhr2.send();
+
+            xhr2.addEventListener('readystatechange', function() {
+                if(xhr2.readyState !== XMLHttpRequest.DONE)
+                    return;
+
+                if(xhr2.status !== 200) {
+                    console.log('Request message', xhr2.statusText);
+                    return;
+                }
+
+                var resData2 = JSON.parse(xhr2.responseText);
+
+                var startIndex = parseInt(document.getElementById('begin').value)
+                var endIndex = parseInt(document.getElementById('end').value)
+
+                for(var i = startIndex; i <= endIndex; i++) {
+                    var result = '<tr>';
+
+                    result += '<td>';
+                        result += '<img src="';
+                        result += resData2[i].thumbnailUrl;
+                        result += '">';
+                    result += '</td>';
+
+                    result += '<td>';
+                        result += resData2[i].albumId;
+                    result += '</td>';
+
+                    result += '<td>';
+                        result += resData2[i].id;
+                    result += '</td>';
+
+                    result += '<td>';
+                        resData2[i].thumbnailUrl
+                        result += '<a href="';
+                        result += resData2[i].url;
+                        result += '" target = "_blank">' + resData2[i].title + '</a>';
+                    result += '</td>';
+
+                    result += '</tr>';
+
+                    document.getElementById('contents2').innerHTML += result;
+                }
+            });
+        });
+    </script>
+
+    <div id="div3">
+        <div>
+            <button type="button" id="btn3">요청3</button>
+            <div id="contents3"></div>
+        </div>
+    </div>
+    <script>
+        function ex03() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://thetestrequest.com/authors/1.xml');
+            xhr.send();
+            xhr.onreadystatechange = () => {
+                if(xhr.readyState !== XMLHttpRequest.DONE) return;
+                if(xhr.status !== 200) return;
+                var resData = xhr.responseXML;
+                resData.getElementsByTagName('id')[0].textContent;
+                resData.getElementsByTagName('id')[0].getAttribute('type');
+                console.log(resData);
+            };
+        }
+
+        document.getElementById('btn3').onclick = ex03;
+    </script>
+
+    <div><button type="button" id="btn4">요청4</button></div>
+    <div id="div4">
+        <div id="contents4">
+            <!--div class="author"></div>
+            <div class="author"></div>
+            <div class="author"></div>
+            <div class="author"></div>
+            <div class="author"></div-->
+        </div>
+    </div>
+    <style>
+        #div4 {
+            width: 1000px;
+        }
+        #contents4 {
+            width: 1000px;
+            display: flex;
+            flex-wrap: wrap;
+            /*justify-content: space-between;*/
+        }
+        #contents4 > .author {
+            width: 300px;
+            height: 300px;
+            border: 1px solid gray;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #contents4 > .author:hover {
+            background-color: beige;
+        }
+    </style>
+    <script>
+        document.getElementById('btn4').onclick = () => {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://thetestrequest.com/authors.xml');
+            xhr.send();
+            xhr.onreadystatechange = () => {
+                if(xhr.readyState !== XMLHttpRequest.DONE) return;
+                if(xhr.status !== 200) return;
+                
+                var resData = xhr.responseXML;
+
+                var result = '';
+                for(var i = 0; i < resData.getElementsByTagName('id').length; i++) {
+                    result += '<div class="author">';
+                    result += '<img src="' + resData.getElementsByTagName('avatar')[i].textContent;
+                    result += '"';
+                    result += '</div>';
+                }
+
+                document.getElementById('contents4').innerHTML = result;
+            };
+        };
+    </script>
+</body>
+</html>

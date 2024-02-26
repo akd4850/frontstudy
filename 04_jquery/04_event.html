@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../assets/lib/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <button type="button" id="btn1">Button1</button>
+    <script>
+        $('#btn1').on('click', function(evt) {
+            alert(evt.target.textContent);
+            //alert($(evt.target).text());
+            //alert($(this).text());
+            //this.textContent
+        });
+    </script>
+
+    <div>
+        <li class="menu">1</li>
+        <li class="menu">2</li>
+        <li class="menu">3</li>
+    </div>
+    <script>
+        // javascript
+        // 객체 별로 이벤트 등록 필요
+        /*var menu = document.getElementsByClassName('menu');
+        for(var i = 0; i < menu.length; i++) {
+            menu[i].addEventListener('click', (evt) => {
+                alert(evt.target.textContent);
+            });
+        }*/
+
+        // jquery
+        $('.menu').on('click', (evt => {
+            alert(evt.target.textContent);
+        }));
+    </script>
+
+    <div>
+        <button type="button" id="btn2">Button2</button>
+        <div></div>
+    </div>
+    <script>
+        var menu = [
+            {
+                name: 1,
+                price: 1
+            },
+            {
+                name: 2,
+                price: 2
+            },
+            {
+                name: 3,
+                price: 3
+            },
+        ];
+
+        var btn2 = $('#btn2');
+        var div = btn2.next();
+        btn2.on('click', (evt ) => {
+            for(let i = 0; i < menu.length; i++) {
+                let str = '<div>';
+                str += '<span>' + menu[i].name + '</span>';
+                str += '&nbsp;';
+                str += '<span>' + menu[i].price + '</span>';
+                str += '&nbsp;';
+                str += '<button class="btn-alert" type="button">OK</button>';
+                str += '</div>';
+                div.append(str);
+            }
+        });
+
+        /*let btnAlert = $('.btn-alert');
+        btnAlert.on('click', (evt) => {
+        });*/
+        $(document).on('click', '.btn-alert', (evt) => {
+            alert($(evt.target).prev().prev().text());
+        });
+    </script>
+
+    <div>
+        <button type="button" id="btn3">Button3</button>
+        <div>What the fuck</div>
+    </div>
+    <script>
+        let btn3 = $('#btn3');
+        let div = btn3.next();
+        div.on('click', (evt) => {
+            alert(evt.target.textContent);
+        });
+        btn3.on('click', (evt) => {
+            div.trigger('click');
+        });
+    </script>
+</body>
+</html>

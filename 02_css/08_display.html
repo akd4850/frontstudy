@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .wrap1 div {
+            display: inline;
+        }
+        .wrap1 span {
+            display: block;
+        }
+    </style>
+    <div class="wrap1">
+        <div>블록 요소</div>
+        <span>인라인 요소</span>
+    </div>
+
+    <hr>
+
+    <style>
+        .wrap2 div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            background-color: gray;
+            color: white;
+            display: inline-block;
+        }
+    </style>
+    <div class="wrap2">
+        <div>블록요소1</div>
+        <div>블록요소2</div>
+        <div>블록요소3</div>
+    </div>
+
+    <hr>
+
+    <style>
+        .ul_wrap li {
+            width: 80px;
+            height: 50px;
+            border: 1px solid gray;
+            background-color: gray;
+            color: white;
+            display: inline-block;
+        }
+        .ul_wrap a {
+            display: block;
+            width: 80px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+    <ul class="ul_wrap">
+        <li><a href="#">메뉴</a></li>
+        <li><a href="#">메뉴</a></li>
+        <li><a href="#">메뉴</a></li>
+        <li><a href="#">메뉴</a></li>
+        <li><a href="#">메뉴</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #div, #div div {
+          box-sizing: border-box;
+        }
+        #div2 {
+          width: 576px;
+          height: 414px;
+          margin: 10px auto;
+        }
+        #img-slide {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 10px;
+        }
+        #img-container {
+          width: 576px;
+          height: 384px;
+          /*background-image: url('../../assets/image/animal1.jpg');*/
+          background-size: cover;
+        }
+      </style>
+</head>
+<body>
+    <div id="bulb">
+        <img src="../assets/image/light1.png" id="imgLight" style="width: 100px;height: 100px;"><br/>
+        <input type="button" value="CLICK ME!!!!!!!!!!!!!!!!" id="btnClick">
+    </div>
+    <script>
+        var imgIndex = 1;
+        document.getElementById('btnClick').onclick = () => {
+            imgIndex = (imgIndex == 1) ? 2 : 1;
+            document.getElementById('imgLight').setAttribute('src', '../assets/image/light' + imgIndex + '.png');
+        };
+    </script>
+
+
+<div id="div2">
+    <div id="img-slide">
+      <button id="btn-prev" type="button">이전</button>
+      <span id="img-no">1 / 10</span>
+      <button id="btn-next" type="button">다음</button>
+    </div>
+    <div id="img-container" style="background-image: url('../../assets/image/animal1.jpg');"></div>
+  </div>
+  
+  <script>
+    /* animal1.jpg ~ animal10.jpg 를 이용하여 이미지 슬라이드를 만드시오. */
+    var animalIndex = 1;
+    // 개시부럴
+    console.log( getComputedStyle(document.querySelector('#img-container')) );
+
+    // 인라인 CSS 아닌 것의 프로퍼티 가져오려면 getComputedStyle 사용해야함
+
+    document.getElementById('btn-next').onclick = (evt) => {
+        //console.log(document.querySelector('#img-container').style);
+        //console.log(evt.target.style);
+        SetBackground(true);
+    };
+
+    document.getElementById('btn-prev').onclick = () => {
+        SetBackground(false);
+    };
+
+    function SetBackground(bIsNext) {
+        if(bIsNext === true && animalIndex < 10) animalIndex++;
+        else if(bIsNext === false && animalIndex > 1) animalIndex--;
+        //console.log(document.getElementById('img-container').getAttribute('style'));
+        //console.log(document.getElementById('img-container').style.backgroundImage);
+        document.getElementById('img-container').style.backgroundImage = "url('../../assets/image/animal" + animalIndex + ".jpg')";
+    }
+  </script>
+</body>
+</html>

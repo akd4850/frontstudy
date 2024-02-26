@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../assets/lib/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <!--div id="div1">hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</div>
+    <style>
+        .blind {
+            display: none;
+        }
+        .visible {
+            display: block;
+        }
+    </style>
+    <script>
+        var div1 = $('#div1');
+        div1.addClass('blind');
+        div1.removeClass('blind');
+        div1.toggleClass('blind');
+        div1.hasClass('blind');
+    </script-->
+
+    <div id="slide">
+        <div><img src="../assets/image/animal1.jpg" alt=""></div>
+        <div><img src="../assets/image/animal2.jpg" alt=""></div>
+        <div><img src="../assets/image/animal3.jpg" alt=""></div>
+        <div><img src="../assets/image/animal4.jpg" alt=""></div>
+        <div><img src="../assets/image/animal5.jpg" alt=""></div>
+        <div><img src="../assets/image/animal6.jpg" alt=""></div>
+        <div><img src="../assets/image/animal7.jpg" alt=""></div>
+        <div><img src="../assets/image/animal8.jpg" alt=""></div>
+        <div><img src="../assets/image/animal9.jpg" alt=""></div>
+        <div><img src="../assets/image/animal10.jpg" alt=""></div>
+    </div>
+    <button id="btnHell" type="button">WELCOME TO THE HELL!!!!!!!!!!!!!!!!!!!!!</button><hr/>
+    <button id="btnKidding" type="button">WELCOME TO THE HELL!!!!!!!!!!!!!!!!!!!!!</button>
+
+    <style>
+        #slide {
+            display: flex;
+            width: 100px;
+            overflow: hidden;
+        }
+        /*img {
+            width: 100px;
+            height: 100px;
+            transition: all 9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }*/
+        .slide {
+            /*width: 200px;
+            height: 200px;*/
+            transform: translateX(-1000px);
+            transition-property: transform;
+            transition-duration: 9s;
+            transition-timing-function: linear;
+        }
+    </style>
+
+    <script>
+        document.getElementById('btnHell').onclick = () => {
+            let imgList = document.getElementsByTagName('img');
+            for(let i = 0; i < imgList.length; i++) {
+                imgList.item(i).classList.add('slide');
+            }
+        };
+
+        document.getElementById('btnKidding').onclick = () => {
+            let imgList = document.getElementsByTagName('img');
+            let testImg = imgList.item(0);
+            console.log(window.getComputedStyle(testImg));
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var costPerTime = 9860;
+        var time = 10;
+        var limitTime = 8;
+        var cost = (time < limitTime) ? time * costPerTime : (limitTime * costPerTime) + (time - limitTime) * 1.5;
+        console.log(cost);
+    </script>
+
+</body>
+</html>

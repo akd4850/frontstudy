@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .box1 {
+            background-color: orange;
+        }
+    </style>
+    <div class="box1">test</div>
+
+    <hr>
+
+    <style>
+        .box2 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid magenta;
+            background-image: url('../../assets/image/attach.png');
+            background-repeat: no-repeat;
+            background-size: 50px;
+            background-size: 50px 100px;
+            background-position: center;
+        }
+    </style>
+    <div class="box2"></div>
+
+    <hr>
+
+    <style>
+        .box3 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid magenta;
+            background-image: url('../../assets/image/animal10.jpg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-size: cover;
+        }
+    </style>
+    <div class="box3"></div>
+
+    <style>
+        .box5 {
+            width: 150px;
+            height: 100px;
+            border: 1px solid mediumspringgreen;
+            background-image: url('../../assets/image/logo.png');
+            background-position: -560px -400px;
+        }
+    </style>
+    <div class="box5"></div>
+
+    <style>
+        .table1 {
+            border: 1px solid gray;
+            border-collapse: collapse;
+        }
+        .table1 td {
+            border-bottom: 1px solid tomato;
+            text-align: center;
+        }
+        .table1 td:first-of-type {
+            width: 100px;
+        }
+        .table1 td:nth-of-type(2) {
+            width: 200px;
+        }
+        .table1 td:last-of-type {
+            width: 300px;
+        }
+
+        .table1 > thead td {
+            padding: 10px;
+        }
+        .table1 > tbody td {
+            height: 50px;
+            vertical-align: top;
+        }
+        .table1 tr:hover {
+            background-color: beige;
+        }
+    </style>
+    <table class="table1">
+        <thead>
+            <tr>
+                <td>회원번호</td>
+                <td>회원명</td>
+                <td>포인트</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>이상준</td>
+                <td>반닼</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>여윤모</td>
+                <td>핑크보이</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>반닼홈</td>
+                <td>Deep</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">wtf</td>
+                <td>100</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <table class="calendar">
+        <thead>
+            <tr>
+                <td>SUN</td>
+                <td>MON</td>
+                <td>TUE</td>
+                <td>WED</td>
+                <td>THU</td>
+                <td>FRI</td>
+                <td>SAT</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

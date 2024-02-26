@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--style>
+        div {
+            box-sizing: border-box;
+            border: 1px solid red;
+        }
+    </style>
+
+    <style>
+        .wrap1 {
+            width: 600px;
+            height: 200px;
+            display: flex;
+        }
+        .wrap1 > div {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+    <div class="wrap1">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+    </div>
+
+    <hr>
+
+    <style>
+        .wrap2 {
+            width: 200px;
+            height: 200px;
+            display: flex;
+        }
+        .wrap2 > .box {
+            width: 50px;
+            height: 50px;
+        }
+        .wrap2#row {
+            flex-direction: row;
+        }
+        .wrap2#row-reverse {
+            flex-direction: row-reverse;
+        }
+        .wrap2#column {
+            flex-direction: column;
+        }
+        .wrap2#column-reverse {
+            flex-direction: column-reverse;
+        }
+    </style>
+    <h3>flex-direction</h3>
+    <div class="wrap2" id="row">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+    </div>
+    <div class="wrap2" id="row-reverse">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+    </div>
+    <div class="wrap2" id="column">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+    </div>
+    <div class="wrap2" id="column-reverse">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+    </div>
+
+    <hr>
+
+    <style>
+        .wrap3 {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .wrap3 > .box {
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+    <div class="wrap3" id="nowrap">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+    </div>
+
+    <hr>
+
+    <style>
+        .wrap4 {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-flow: column wrap;
+        }
+        .wrap4 > .box {
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+    <div class="wrap4">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+    </div>
+
+    <hr>
+
+    <style>
+        .wrap5 {
+            width: 300px;
+            height: 100px;
+            display: flex;
+        }
+        .wrap5 .box {
+            width: 50px;
+            height: 50px;
+        }
+        .wrap5#flext-start {
+            justify-content: space-between;
+        }
+    </style>
+    <div class="wrap5" id="flext-start">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+    </div>
+
+    <hr>
+
+    <style>
+        .wrap6 {
+            width: 200px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+        }
+        .wrap6 > .box {
+            width: 50px;
+            height: 50px;
+        }
+        .wrap6#flex-start {
+            align-items: flex-start;
+        }
+    </style>
+    <div class="wrap6" id="flex-start">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+    </div>
+
+    <hr>
+
+    <style>
+        .wrap7 {
+            width: 500px;
+            height: 100px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+        .wrap7 > .box1 {
+            flex: 3;
+        }
+        .wrap7 > .box2 {
+            flex: 5;
+        }
+        .wrap7 > .box3 {
+            flex: 2;
+        }
+    </style>
+    <div class="wrap7">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+    </div-->
+
+    <style>
+        ul, li {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .ul_wrap {
+            display: flex;
+        }
+        li {
+            width: 70px;
+            height: 50px;
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+            text-align: center;
+            line-height: 50px;
+        }
+        a {
+            width: 70px;
+            height: 50px;
+            line-height: 50px;
+            text-decoration-line: none;
+        }
+        a:hover {
+            border-bottom: 5px solid gray;
+        }
+    </style>
+    <ul class="ul_wrap">
+        <li><a href="#">메뉴</a></li>
+        <li><a href="#">메뉴</a></li>
+        <li><a href="#">메뉴</a></li>
+        <li><a href="#">메뉴</a></li>
+        <li><a href="#">메뉴</a></li>
+    </ul>
+
+</body>
+</html>

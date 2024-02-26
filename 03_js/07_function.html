@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //myFunc1();
+
+        function myFunc1(){
+            window.alert('sdfffffffffffffffffffffffffffffffff');
+        }
+
+        /* 함수표현식
+         호이스팅 안됨(***)
+        */
+       var myFunc2 = function() {
+            window.alert('함수 표현식이다옹');
+       }
+
+       //myFunc2();
+
+       function myFunc3(number) {
+            alert(number);
+       }
+
+       var number = 10;
+       //myFunc3(number);
+
+       function myFunc4(array) {
+        array[0] = 'Z';
+       }
+
+       // 배열의 경우 참조변수의 전달
+       var array = ['A', 'B'];
+       console.log(array);
+       myFunc4(array);
+       console.log(array);
+
+       function myFunc5(obj) {
+        obj.maker = 'test';
+        obj.model = 'test111';
+       }
+
+       var obj = {
+        maker: 'deep',
+        model: 'what'
+       };
+
+       console.log(obj);
+       myFunc5(obj);
+       console.log(obj);
+
+       function myFunc6(number = 6) {
+        document.write(number);
+       }
+
+       //myFunc6();
+
+       function myFunc7(...numbers) {
+        var total = 0;
+        for(var i = 0; i < numbers.length; i++) {
+            total += numbers[i];
+        }
+       }
+
+       function myFunc8() {
+        var total = 0;
+        for(var i = 0; i < arguments.length; i++) {
+            total += arguments[i];
+        }
+        console.log(total / arguments.length);
+       }
+
+       myFunc8(1, 2, 3, 4);
+
+       function myFunc9(func) {
+        func();
+       }
+
+       //myFunc9(function() { document.write("우왕굳"); });
+
+       function myFunc10(func, x, y) {
+        func(x, y);
+       }
+
+       /*myFunc10(function(x, y) {
+        document.write(x + y);
+       }, 'ww', 'yy');*/
+
+       function myMax( ary ) {
+        var max = 0;
+        for(var i = 0; i < ary.length; i++) {
+            if( ary[i] > max ) max = ary[i];
+        }
+        return max;
+       }
+       //document.write('최대값 : ' + myMax([1,2,3,4,5]));
+
+       function getAddSquare(x, y) {
+        function getSquare(a) {
+            return a * a;
+        }
+
+        return getSquare(x) + getSquare(y);
+       }
+
+       function outer(a) {
+        function inner(b) {
+            return a + b;
+        }
+        return inner;
+       }
+
+       console.log(outer(10)(20));
+
+    </script>
+</body>
+</html>

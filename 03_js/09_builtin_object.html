@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var car = {
+            maker: 'hyundai',
+            model: 'abt'
+        };
+
+        var jsonData = JSON.stringify(car);
+        console.log(car);
+        console.log(jsonData, typeof jsonData);
+        var jsObj = JSON.parse(jsonData);
+        console.log(jsObj, typeof jsObj);
+
+        var array = ['Freedom', 'Justice', 'Destiny'];
+        array.forEach(function(element) {
+            console.log(element);
+        });
+        array.forEach(function(element, i) {
+            console.log(i, element);
+        });
+
+        const myFunc1 = () => {
+            console.log('myFunc 실행');
+        }
+        myFunc1();
+
+        /*const myFunc2 = function() {
+            return 'If you smell~ What the Rock is cooking.';
+        }*/
+        const myFunc2 = () => "Deep";
+        console.log(myFunc2());
+
+        // filter 
+        array.filter(function(element) {
+            return element.includes('D');
+        }).forEach(function(element) {
+            console.log(element);
+        });
+
+        array.filter(element =>  element.includes('D') )
+             .forEach(element => { console.log(element); });
+
+        array.map(function(element) {
+            return element + ' Gundam';
+        }).forEach(function(element){
+            console.log(element);
+        });
+    </script>
+</body>
+</html>

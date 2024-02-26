@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrap">
+        <div id="box1" class="primary-box">box1</div>
+        <div id="box2" class="primary-box">box2</div>
+        <div id="box3" class="primary-box">box3</div>
+    </div>
+
+    <script>
+        console.log(document.getElementById('box1'));
+        console.log(document.getElementsByClassName('primary-box'));
+        console.log(document.getElementsByTagName('div'));
+        console.log(document.querySelector('.wrap > #box1'));
+        console.log(document.querySelector('.wrap > .primary-box'));
+    </script>
+
+    <div id="div1"><strong>러셀 더 싱글 배럴</strong></div>
+    <div id="div2"><strong>dddddddddddddddddddddddddddddddddddddd</strong></div>
+    <div id="div3"><img src="../assets/image/animal10.jpg" width="100px"></div>
+    <script>
+        document.getElementById('div1').textContent = 'if you smell what the rock is cooking';
+        document.getElementById('div1').textContent = '<em>안녕하지 못함.</em>';
+        console.log(document.getElementById('div2').innerHTML);
+        document.getElementById('div2').innerHTML = '<em>안녕하지 못함.</em>';
+        //document.querySelector('#div3 > img').getAttribute('src') = '../assets/image/animal1.jpg';
+        document.querySelector('#div3 > img').setAttribute('src', '../assets/image/animal1.jpg');
+        //document.querySelector('#div3 > img').removeAttribute('width');
+        console.log(document.querySelector('#div3 > img').getAttribute('alt'));
+        document.querySelector('#div3 > img').setAttribute('alt', 'What the fuck');
+        console.log(document.querySelector('#div3 > img').getAttribute('alt'));
+    </script>
+
+    <div id="div4">
+        <input type="radio" name="gender" value="man" class="blind" id="man" checked="checked">
+        <label for="man">ㄴㅏㅁㅈㅏ</label>
+        <input type="radio" name="gender" value="woman" class="blind" id="woman">
+        <label for="woman">ㅇㅕㅈㅏ</label>
+    </div>
+    <style>
+        #div4 > .blind {
+            display: none;
+        }
+        #div4 > label {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background-color: deeppink;
+            cursor: pointer;
+        }
+        #div4 > input:checked + label {
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        /*document.getElementsByClassName('blind').array.forEach(function(radio) {
+           console.log('dkdkdkdkdkdk') ;
+        });*/
+        /*var blind = document.getElementsByClassName('blind');
+        for(var i = 0; blind.length; i++) {
+        }*/
+
+        document.getElementById('man').checked = false;
+        document.getElementById('man').removeAttribute('checked');
+        document.getElementById('woman').checked = true;
+        document.getElementById('woman').setAttribute('checked', 'checked');
+    </script>
+
+    <div id="div5">XYLITOL</div>
+    <script>
+        document.getElementById('div5').style.fontSize = '50px';
+        document.getElementById('div5').style['background-color'] = 'deeppink';
+    </script>
+</body>
+</html>

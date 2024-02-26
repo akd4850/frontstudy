@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../assets/lib/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="box" class="wrap">box</div>
+    <script>
+        /*var div = $('div');
+        console.log(div);
+        console.log($('#box'));
+        console.log($('.wrap'));*/
+    </script>
+
+    <ul class="ott">
+        <li id="netflex"><a href="javascript:void(0)">넷플릭스</a></li>
+        <li id="disneyplus"><a href="javascript:void(0)">디즈니플러스</a></li>
+        <li id="tving"><a id="tving-link" href="javascript:void(0)">티빙</a></li>
+        <li id="wave"><a href="javascript:void(0)">웨이브</a></li>
+        <li id="coupangplay"><a href="javascript:void(0)">쿠팡플레이</a></li>
+    </ul>
+    <script>
+        /*console.log($('.ott > li'));
+        console.log($('.ott').find('li'));
+        console.log($('.ott').children('li'));
+        console.log($('.ott').children());
+
+        console.log($('.ott a'));
+        console.log($('.ott').find('a'));
+        console.log($('.ott').children('a'));
+        console.log($('.ott').children().children('a'));
+
+        console.log($('#tving ~ li'));
+        console.log($('#tving').nextAll('li'));
+        console.log($('#tving').prevAll('li'));
+        console.log($('#tving').siblings('li'));
+
+        console.log($('#tving + li'));
+        console.log($('#tving').next);
+        console.log($('#tving').prev);
+
+        console.log('parent');
+        console.log($('#tving-link').parent('li'));
+        console.log($('#tving-link').closest('li'));
+        console.log($('#tving-link').parents());*/
+    </script>
+
+    <form id="frm">
+        <div><input type="text"></div>
+        <div><input type="password" autofocus></div>
+        <div><input type="radio" name="a" checked><input type="radio" name="a"></div>
+        <div><input type="checkbox" checked><input type="checkbox"></div>
+        <div>
+            <select id="select_test">
+                <option selected>A</option>
+                <option>B</option>
+            </select>
+        </div>
+    </form>
+
+    <script>
+        /*console.log($(':text'));
+        console.log($(':password'));
+        console.log($(':radio'));
+        console.log($(':checkbox'));*/
+
+        /*console.log($(':focus'));
+        console.log($(':checked'));
+        console.log($(':radio:checked'));
+        console.log($(':checkbox:checked'));
+        console.log($(':selected'));*/
+
+        /*console.log($(':text').is(':focus'));
+        console.log($(':radio').is(':checked'));*/
+        console.log($('#select_test > option').is(':selected'));
+    </script>
+
+    <div id="div1">W    T   F</div>
+    <div id="div3"><img src="../assets/image/animal10.jpg" width="192px" alt=""></div>
+    <script>
+        $('#div1').text('sdfafsdfafasdf');
+        $('#div1').html('sdfafsdfafasdf');
+        //$('#div3').find('img').attr('src');
+        $('#div3').find('img').attr('src', '../assets/image/animal5.jpg');
+        //$('#div3').find('img').removeAttr('src');
+    </script>
+
+    <div id="div4">
+        <input type="radio" class="blind" id="man" value="M" checked="checked">
+    </div>
+    <script>
+        let radio = $('#div4').find(':radio');
+        console.log(radio.prop('type'));
+        console.log(radio.prop('id'));
+        console.log(radio.prop('className'), radio.prop('class'));
+        console.log(radio.prop('value'), radio.val());
+        console.log(radio.prop('checked'));
+
+        radio.prop('type', 'checkbox');
+        //radio.removeProp('type');
+    </script>
+
+    <div id="div5">
+        <input type="text" value="kjsdaflkjsdlkfjdsalkfjlj">
+    </div>
+    <script>
+        console.log($('#div5').find(':text').val());
+        $('#div5').find(':text').val('WELCOME TO HELL!');
+    </script>
+
+    <div id="div6" data-name="what" data-home-address="seoul" data-zipCode="12345">고길동</div>
+    <script>
+        console.log($('#div6').data('name'));
+        console.log($('#div6').data('home-address'), $('#div6').data('homeAddress'));
+        console.log($('#div6').data('zipCode'), $('#div6').data('zipcode'));
+        $('#div6').data('name', '둘리개객끼');
+        console.log($('#div6').data('name'));
+        $('#div6').data('game' , 'Elden Ring');
+        console.log($('#div6').data('game'));
+    </script>
+
+    <div id="div7">ddddddddddddddddddddddddddd</div>
+    <script>
+        $('#div7').css('fontsize', '32px');
+        //$('#div7').css('font-weight', 900);
+        //$('#div7').css('fontWeight', 900).css('');
+        $('#div7').css({
+            width: '200px',
+            height: '200px'
+        });
+    </script>
+
+    <div id="menu"></div>
+    <script>
+        let menu = $('#menu');
+        menu.append('<div>1</div>');
+        $('<div>2</div').appendTo(menu);
+        //menu.prepend
+        //menu.prependTo
+        $('#menu > div:last-of-type').after('<div>3</div>');
+        $('#menu > div:first-of-type').before('<div>4</div>');
+        $('#menu > div:nth-of-type(2)').remove();
+        menu.empty();
+    </script>
+</body>
+</html>

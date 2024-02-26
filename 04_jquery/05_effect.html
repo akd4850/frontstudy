@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../assets/lib/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <style>
+        #img-container {
+            width: 385px;
+            height: 256px;
+            background-image: url('../assets/image/animal10.jpg');
+            background-size: 100%;
+        }
+    </style>
+    <div>
+        <button type="button" id="btn-open">OPEN</button>
+        <button type="button" id="btn-close">CLOSE</button>
+        <button type="button" id="btn-toggle">TOGGLE</button>
+    </div>
+    <div id="img-container"></div>
+    <script>
+        $('#btn-close').on('click', (evt) => {
+            //$('#img-container').hide();
+            /*$('#img-container').fadeOut(3000, 'linear', () => {
+            });*/
+            /*$('#img-container').slideUp(3000, 'linear', () => {
+            });*/
+            //$('#img-container').fadeTo(3000, 0.5);
+        });
+
+        $('#btn-open').on('click', (evt) => {
+            //$('#img-container').fadeIn(3000, 'linear', () => {});
+            //$('#img-container').slideDown(3000, 'linear', () => {});
+        });
+    </script>
+</body>
+</html>
